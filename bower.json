@@ -1,0 +1,19 @@
+{
+  "name": "geometry-and-graphics",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Yury Kozhenov <yurykozhenov@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ]
+}

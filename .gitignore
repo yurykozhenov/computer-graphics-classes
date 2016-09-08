@@ -1,0 +1,21 @@
+# Packages
+node_modules/
+bower_components/
+
+# Builded project
+build/
+dest/
+dist/
+
+# IDE's
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+
+# NPM debug log
+npm-debug*
+
+# Other
+examples/
