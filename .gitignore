@@ -6,6 +6,7 @@ bower_components/
 build/
 dest/
 dist/
+*-win32-x64
 
 # IDE's
 .vscode/
@@ -16,6 +17,11 @@ dist/
 
 # NPM debug log
 npm-debug*
+
+# Archives
+*.7z
+*.zip
+*.rar
 
 # Other
 examples/
