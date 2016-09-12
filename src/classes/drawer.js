@@ -1,9 +1,6 @@
-module.exports = class Drawer {
-  constructor(ctx, x0, y0) {
-    this.ctx = ctx;
-
-    this.x0 = x0;
-    this.y0 = y0;
+export default class Drawer {
+  constructor(context, x0, y0) {
+    this.ctx = context;
 
     this.x = x0;
     this.y = y0;
@@ -18,8 +15,7 @@ module.exports = class Drawer {
       this.y = y;
     }
 
-
-    this.ctx.moveTo(this.x, this,y);
+    this.ctx.moveTo(this.x, this.y);
   }
 
   moveRel(x, y) {
@@ -67,7 +63,7 @@ module.exports = class Drawer {
       this.x += x;
       this.y += y;
     }
-    
+
     if (dashed) {
       // TODO: Draw dashed line
       this.ctx.lineTo(this.x, this.y);
@@ -81,4 +77,4 @@ module.exports = class Drawer {
   changeColor(color) {
     this.ctx.strokeStyle = color;
   }
-};
+}

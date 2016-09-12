@@ -1,7 +1,9 @@
-const Drawer = require('../classes/drawer.js');
+import Drawer from '../classes/drawer';
 
-module.exports = function drawCube(x0, y0, size) {
-  const drawer = new Drawer(window.ctx, x0, y0);
+import { ctx } from '../canvas';
+
+export default function drawCube(x0, y0, size) {
+  const drawer = new Drawer(ctx, x0, y0);
 
   const visibleColor = '#00f';
   const invisibleColor = '#bbf';
@@ -29,4 +31,4 @@ module.exports = function drawCube(x0, y0, size) {
   drawer.moveRel(0, size);
   drawer.lineRel(halfSize, -halfSize);
   drawer.lineRel(0, -size);
-};
+}
