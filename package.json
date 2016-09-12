@@ -3,31 +3,41 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "example": "examples"
-  },
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ignore-path .gitignore",
+    "bundle": "webpack",
+    "watch": "webpack --watch",
+    "livereload": "webpack-dev-server --hot --inline",
+    "build:windows": "electron-packager . --platform=win32 --arch=x64 --overwrite --ignore=.gitignore"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Yury Kozhenov <yurykozhenov@gmail.com>",
+  "license": "MIT",
+  "private": true,
   "dependencies": {
     "angular": "^1.5.8"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
-    "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "bower": "^1.7.9",
     "clean-webpack-plugin": "^0.1.10",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
+    "electron-packager": "^8.0.0",
     "electron-prebuilt": "^1.3.5",
+    "eslint": "^3.4.0",
+    "eslint-config-google": "^0.6.0",
+    "eslint-loader": "^1.5.0",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "ng-annotate-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-stream": "^3.2.0"
   }
 }

@@ -5,7 +5,7 @@
   "authors": [
     "Yury Kozhenov <yurykozhenov@gmail.com>"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "",
   "private": true,
   "ignore": [
@@ -15,5 +15,8 @@
     "src/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "skeleton": "^2.0.4"
+  }
 }
