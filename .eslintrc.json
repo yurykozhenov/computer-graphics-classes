@@ -1,29 +1,74 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es6": true,
     "node": true
   },
-  "extends": "eslint:recommended",
-  "globals": {
-    "ctx": true
+  "globals": {},
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "installedESLint": true,
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+
+    "require-jsdoc": "off",
+    "valid-jsdoc": "warn",
+
+    "no-extra-parens": "warn",
+    "no-prototype-builtins": "warn",
+    "no-template-curly-in-string": "warn",
+    "no-unsafe-negation": "warn",
+
+    "class-methods-use-this": "warn",
+    "curly": ["error", "multi-line", "consistent"],
+    "eqeqeq": "warn",
+    "no-implicit-globals": "error",
+    "no-invalid-this": "error",
+    "no-magic-numbers": ["warn", {
+      "ignore": [0, 1, 2, 3],
+      "ignoreArrayIndexes": true,
+      "enforceConst": true
+    }],
+    "vars-on-top": "warn",
+
+    "strict": ["error", "never"],
+
+    "init-declarations": "error",
+    "no-shadow": "warn",
+    "no-undefined": "error",
+    "no-use-before-define": "error",
+
+    "global-require": "error",
+
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed"],
+    "no-confusing-arrow": "warn",
+    "no-useless-computed-key": "error",
+    "no-useless-rename": ["error", {
+      "ignoreImport": true,
+      "ignoreDestructuring": true
+    }],
+    "no-var": "error",
+    "object-shorthand": ["error", "methods", {
+      "avoidQuotes": true
+    }],
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "prefer-reflect": "warn",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "symbol-description": "warn"
   }
 }

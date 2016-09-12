@@ -1,12 +1,23 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional REPL history
+.node_repl_history
+
 # Packages
 node_modules/
 bower_components/
 
-# Builded project
+# Bundled project
 build/
 dest/
 dist/
-*-win32-x64
+www/
+
+# Electron project builds
+*-win32-x64/
 
 # IDE's
 .vscode/
@@ -15,13 +26,12 @@ dist/
 # System files
 .DS_Store
 
-# NPM debug log
-npm-debug*
-
 # Archives
 *.7z
 *.zip
 *.rar
+*.tar
+*.tar.*
 
 # Other
 examples/
