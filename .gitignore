@@ -32,6 +32,3 @@ www/
 *.rar
 *.tar
 *.tar.*
-
-# Other
-examples/
