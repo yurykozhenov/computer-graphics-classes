@@ -10,8 +10,7 @@ const DESTINATION_FOLDER = 'build';
 const MODULES_FOLDERS = ['node_modules', 'bower_components'];
 const MODULES_FOLDERS_REGEX = MODULES_FOLDERS.map(module => new RegExp(module));
 
-// const PRODUCTION = process.env.NODE_ENV === 'production';
-// const DEVELOPMENT = process.env.NODE_ENV === 'development';
+const PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
@@ -22,9 +21,9 @@ module.exports = {
     path: path.resolve(__dirname, DESTINATION_FOLDER),
     filename: '[name].bundle.js'
   },
-  devtool: '#inline-source-map',
+  devtool: PRODUCTION ? null : '#inline-source-map',
   resolve: {
-    // root: path.resolve(__dirname, './src')
+    root: path.resolve(__dirname, SOURCE_FOLDER),
     modulesDirectories: MODULES_FOLDERS
   },
   module: {
@@ -76,19 +75,14 @@ module.exports = {
     new CleanWebpackPlugin([
       DESTINATION_FOLDER
     ])
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery'
-    // }),
-    //   .concat(PRODUCTION ? [
-    //   new webpack.optimize.UglifyJsPlugin({
-    //     compress: {
-    //       warnings: false
-    //     },
-    //     output: {
-    //       comments: false
-    //     }
-    //   })
-    // ] : []
-  ]
+  ].concat(PRODUCTION ? [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
+    })
+  ] : [])
 };
