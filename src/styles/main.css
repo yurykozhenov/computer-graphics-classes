@@ -1,0 +1,7 @@
+.rotate-right-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-left-45 {
+  transform: rotate(-45deg);
+}

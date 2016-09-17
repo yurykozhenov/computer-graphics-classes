@@ -1,0 +1,6 @@
+<button type="button button-small" ng-click="$ctrl.generateRandom()">One Random</button>
+
+<button type="button" ng-if="!$ctrl.randomGeneration" ng-click="$ctrl.startRandomGeneration()">Random Generation</button>
+<button type="button" ng-if="$ctrl.randomGeneration" ng-click="$ctrl.stopRandomGeneration()">Stop Generation</button>
+
+<p ng-if="$ctrl.randomGeneration">Generations: <strong>{{$ctrl.countGenerations}}</strong></p>

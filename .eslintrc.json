@@ -16,7 +16,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
@@ -24,6 +23,7 @@
 
     "require-jsdoc": "off",
     "valid-jsdoc": "warn",
+    "no-console": "warn",
 
     "no-extra-parens": "warn",
     "no-prototype-builtins": "warn",
@@ -32,11 +32,12 @@
 
     "class-methods-use-this": "warn",
     "curly": ["error", "multi-line", "consistent"],
+    "default-case": "off",
     "eqeqeq": "warn",
     "no-implicit-globals": "error",
     "no-invalid-this": "error",
     "no-magic-numbers": ["warn", {
-      "ignore": [0, 1, 2, 3],
+      "ignore": [0, 0.5, 1, 2, 3, 4, 8, 10, 16, 32, 64, 100, 128, 200, 255, 256, 1000],
       "ignoreArrayIndexes": true,
       "enforceConst": true
     }],
