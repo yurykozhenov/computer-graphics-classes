@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const SOURCE_FOLDER = 'src';
 const DESTINATION_FOLDER = 'build';
@@ -15,11 +16,11 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 module.exports = {
   entry: {
     app: path.resolve(__dirname, SOURCE_FOLDER, 'app'),
-    deps: path.resolve(__dirname, SOURCE_FOLDER, 'deps')
+    vendor: ['angular', 'skeleton', 'font-awesome/css/font-awesome.css'] // path.resolve(__dirname, SOURCE_FOLDER, 'vendor')
   },
   output: {
     path: path.resolve(__dirname, DESTINATION_FOLDER),
-    filename: '[name].bundle.js'
+    filename: 'bundle.js'
   },
   devtool: PRODUCTION ? null : '#inline-source-map',
   resolve: {
@@ -46,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
         test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
@@ -76,7 +77,9 @@ module.exports = {
       )
     ),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'deps'
+      name: 'vendor',
+      filename: 'vendor.js',
+      minChunks: Infinity
     }),
     new CopyWebpackPlugin([
       {
@@ -86,7 +89,10 @@ module.exports = {
     ]),
     new CleanWebpackPlugin([
       DESTINATION_FOLDER
-    ])
+    ]),
+    new ExtractTextPlugin('[name].css', {
+      allChunks: true
+    })
   ].concat(PRODUCTION ? [
     new webpack.optimize.UglifyJsPlugin({
       compress: {

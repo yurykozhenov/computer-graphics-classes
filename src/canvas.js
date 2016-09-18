@@ -1,6 +1,6 @@
 export const canvas = document.getElementById('canvas');
 
-const sidebarWidthRatio = 1.4;
+const sidebarWidthRatio = 1.22;
 const scrollbarOffset = 25;
 
 canvas.width = window.innerWidth / sidebarWidthRatio;

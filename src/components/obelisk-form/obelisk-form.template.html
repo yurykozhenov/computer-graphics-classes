@@ -35,11 +35,17 @@
   <label for="h">h</label>
   <input type="number" class="u-full-width" id="h" ng-model="$ctrl.figure.h" ng-change="$ctrl.figure.draw()">
 
-  <label for="visibleColor">visibleColor</label>
-  <input type="color" class="u-full-width" id="visibleColor" ng-model="$ctrl.figure.visibleColor" ng-change="$ctrl.figure.draw()">
+  <div class="row">
+    <div class="six columns">
+      <label for="visibleColor">visibleColor</label>
+      <input type="color" class="u-full-width" id="visibleColor" ng-model="$ctrl.figure.visibleColor" ng-change="$ctrl.figure.draw()">
+    </div>
+    <div class="six columns">
+      <label for="invisibleColor">invisibleColor</label>
+      <input type="color" class="u-full-width" id="invisibleColor" ng-model="$ctrl.figure.invisibleColor" ng-change="$ctrl.figure.draw()">
+    </div>
+  </div>
 
-  <label for="invisibleColor">invisibleColor</label>
-  <input type="color" class="u-full-width" id="invisibleColor" ng-model="$ctrl.figure.invisibleColor" ng-change="$ctrl.figure.draw()">
 
   <cg-random-generation></cg-random-generation>
   <cg-moving></cg-moving>

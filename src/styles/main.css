@@ -5,3 +5,9 @@
 .rotate-left-45 {
   transform: rotate(-45deg);
 }
+
+/* Overrides Skeleton container styles */
+.container {
+  width: 100%;
+  max-width: 100%;
+}
