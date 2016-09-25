@@ -1,5 +1,5 @@
 import module from '../../app.module';
-import { canvas, ctx } from '../../canvas';
+import { canvas, ctx, setCanvasSize } from '../../canvas';
 
 import drawObelisk from '../../functions/draw-obelisk';
 
@@ -18,6 +18,13 @@ class FigureService {
 
     this.visibleColor = '#0000ff';
     this.invisibleColor = '#bbbbff';
+
+    this.draw();
+
+    window.addEventListener('resize', () => {
+      setCanvasSize();
+      this.redraw();
+    });
   }
 
   draw() {

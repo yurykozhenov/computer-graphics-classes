@@ -20,24 +20,30 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "object-curly-spacing": ["error", "always"],
+    "max-len": ["error", 140],
+    "camelcase": "off",
+
+    "comma-dangle": "off",
+    "no-useless-constructor": "off",
+    "quote-props": ["error", "as-needed"],
+    "padded-blocks": "off",
 
     "require-jsdoc": "off",
     "valid-jsdoc": "warn",
-    "no-console": "warn",
+    "no-console": "off",
 
     "no-extra-parens": "warn",
     "no-prototype-builtins": "warn",
     "no-template-curly-in-string": "warn",
     "no-unsafe-negation": "warn",
 
-    "class-methods-use-this": "warn",
     "curly": ["error", "multi-line", "consistent"],
     "default-case": "off",
     "eqeqeq": "warn",
     "no-implicit-globals": "error",
     "no-invalid-this": "error",
     "no-magic-numbers": ["warn", {
-      "ignore": [0, 0.5, 1, 2, 3, 4, 8, 10, 16, 32, 64, 100, 128, 200, 255, 256, 1000],
+      "ignore": [-1, 0.5, 0, 1, 2, 8, 16, 100, 200, 255, 300, 400, 500, 1000, 80, 8080, 60000],
       "ignoreArrayIndexes": true,
       "enforceConst": true
     }],
@@ -45,12 +51,9 @@
 
     "strict": ["error", "never"],
 
-    "init-declarations": "error",
     "no-shadow": "warn",
     "no-undefined": "error",
     "no-use-before-define": "error",
-
-    "global-require": "error",
 
     "arrow-body-style": ["error", "as-needed"],
     "arrow-parens": ["error", "as-needed"],

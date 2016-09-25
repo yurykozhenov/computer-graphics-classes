@@ -1,9 +1,13 @@
 export const canvas = document.getElementById('canvas');
 
-const sidebarWidthRatio = 1.22;
-const scrollbarOffset = 25;
+const SIDEBAR_WIDTH_RATIO = 1.22;
+const SCROLLBAR_OFFSET = 25;
 
-canvas.width = window.innerWidth / sidebarWidthRatio;
-canvas.height = window.innerHeight - scrollbarOffset;
+export function setCanvasSize() {
+  canvas.width = window.innerWidth / SIDEBAR_WIDTH_RATIO;
+  canvas.height = window.innerHeight - SCROLLBAR_OFFSET;
+}
+
+setCanvasSize();
 
 export const ctx = canvas.getContext('2d');

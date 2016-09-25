@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "electron": "electron .",
     "lint": "eslint . --ignore-path .gitignore",
     "bundle": "webpack",
     "watch": "webpack --watch",
@@ -16,7 +17,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
