@@ -75,7 +75,7 @@ class MovingController {
       this.figure.h = this.figure.h > 0 ? this.figure.h - 1 : 0;
     }
 
-    this.figure.draw();
+    this.figure.redraw();
   }
 }
 

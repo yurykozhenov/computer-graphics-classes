@@ -21,6 +21,20 @@ class FigureService {
   }
 
   draw() {
+    drawObelisk(
+      this.x0,
+      this.y0,
+      this.a1,
+      this.b1,
+      this.a2,
+      this.b2,
+      this.h,
+      this.visibleColor,
+      this.invisibleColor
+    );
+  }
+
+  redraw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawObelisk(

@@ -10,7 +10,7 @@
     "bundle": "webpack",
     "watch": "webpack --watch",
     "livereload": "webpack-dev-server --hot --inline",
-    "build:windows": "electron-packager . --platform=win32 --arch=x64 --overwrite --ignore=.gitignore"
+    "build:windows": "electron-packager . --platform=win32 --arch=x64 --overwrite"
   },
   "author": "Yury Kozhenov <yurykozhenov@gmail.com>",
   "license": "MIT",

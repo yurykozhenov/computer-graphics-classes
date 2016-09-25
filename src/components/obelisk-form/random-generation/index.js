@@ -59,7 +59,7 @@ class RandomGenerationController {
     b = Math.round(Math.random() * 255).toString(16);
     this.figure.invisibleColor = `#${r}${g}${b}`;
 
-    this.figure.draw();
+    this.figure.redraw();
   }
 }
 
