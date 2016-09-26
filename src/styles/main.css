@@ -11,3 +11,11 @@
   width: 100%;
   max-width: 100%;
 }
+
+html {
+  overflow: hidden;
+}
+
+.sidebar {
+  background: transparent;
+}
