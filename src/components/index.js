@@ -1,1 +1,1 @@
-import './obelisk-form';
+import './obeliskForm';

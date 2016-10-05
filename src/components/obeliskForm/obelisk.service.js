@@ -1,12 +1,12 @@
-import module from '../../app.module';
+import appModule from '../../app.module';
 import { canvas, ctx, setCanvasSize } from '../../canvas';
 
 import Obelisk from '../../classes/figures/obelisk';
 
 class ObeliskService {
   constructor() {
-    this.x0 = 300; // Початкова горизонтальна точка
-    this.y0 = 400; // Початкова вертикальна точка
+    this.x0 = canvas.width / 2; // Початкова горизонтальна точка
+    this.y0 = canvas.height / 1.5; // Початкова вертикальна точка
 
     this.a1 = 250; // Довжина нижньої основи
     this.b1 = 300; // Ширина нижньої основи
@@ -14,7 +14,7 @@ class ObeliskService {
     this.a2 = 130; // Довжина верхьної основи
     this.b2 = 170; // Ширина верхньої основи
 
-    this.h = 300; //  Висота
+    this.h = 200; //  Висота
 
     this.visibleColor = '#0000ff';
     this.invisibleColor = '#bbbbff';
@@ -66,4 +66,4 @@ class ObeliskService {
   }
 }
 
-module.service('Obelisk', ObeliskService);
+appModule.service('Obelisk', ObeliskService);

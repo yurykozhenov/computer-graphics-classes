@@ -1,8 +1,8 @@
-import module from '../../../app.module';
+import appModule from '../../../../app.module';
 
-import template from './moving.template.html';
+import { INTERVAL_DELAY } from '../../../../config';
 
-import { INTERVAL_DELAY } from '../../../config';
+import template from './moving.component.html';
 
 class MovingController {
   constructor($interval, Obelisk) {
@@ -79,7 +79,7 @@ class MovingController {
   }
 }
 
-module.component('cgMoving', {
+appModule.component('cgMoving', {
   template: template,
   controller: MovingController
 });

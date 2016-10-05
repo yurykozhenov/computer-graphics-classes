@@ -1,0 +1,4 @@
+<button type="button" ng-if="!$ctrl.elipticalMovement" ng-click="$ctrl.startElipticalMovement()">Eliptical Movement</button>
+<button type="button" ng-if="$ctrl.elipticalMovement" ng-click="$ctrl.stopElipticalMovement()">Stop Eliptical Movement</button>
+
+<p ng-if="$ctrl.elipticalMovement">Degree: <strong>{{$ctrl.degree}}</strong></p>

@@ -1,0 +1,4 @@
+<button type="button" ng-if="!$ctrl.generator" ng-click="$ctrl.startRandomLocation()">Random Location</button>
+<button type="button" ng-if="$ctrl.generator" ng-click="$ctrl.stopRandomLocation()">Stop Generation</button>
+
+<p ng-if="$ctrl.generator">Generations: <strong>{{$ctrl.countGenerations}}</strong></p>
