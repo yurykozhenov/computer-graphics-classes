@@ -1,5 +1,5 @@
 import module from '../../../app.module';
-import { canvas } from '../../../canvas';
+import { canvasXCenter, canvasYCenter } from '../../../canvas';
 
 import template from './random-generation.template.html';
 
@@ -35,19 +35,16 @@ class RandomGenerationController {
   }
 
   generateRandom() {
-    const maxWidth = canvas.width / 2;
-    const maxHeight = canvas.height / 2;
+    this.figure.x0 = Math.round(canvasXCenter + (Math.random() - 0.5) * 200);
+    this.figure.y0 = Math.round(canvasYCenter + (Math.random() - 0.5) * 200);
 
-    this.figure.x0 = Math.round(maxWidth + (Math.random() - 0.5) * 200);
-    this.figure.y0 = Math.round(maxHeight + (Math.random() - 0.5) * 200);
+    this.figure.a1 = Math.round(Math.random() * canvasXCenter);
+    this.figure.b1 = Math.round(Math.random() * canvasYCenter);
 
-    this.figure.a1 = Math.round(Math.random() * maxWidth);
-    this.figure.b1 = Math.round(Math.random() * maxHeight);
+    this.figure.a2 = Math.round(Math.random() * canvasXCenter);
+    this.figure.b2 = Math.round(Math.random() * canvasYCenter);
 
-    this.figure.a2 = Math.round(Math.random() * maxWidth);
-    this.figure.b2 = Math.round(Math.random() * maxHeight);
-
-    this.figure.h = Math.round(Math.random() * maxHeight);
+    this.figure.h = Math.round(Math.random() * canvasYCenter);
 
     let r = Math.round(Math.random() * 255).toString(16);
     let g = Math.round(Math.random() * 255).toString(16);

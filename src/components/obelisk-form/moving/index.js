@@ -1,8 +1,7 @@
 import module from '../../../app.module';
+import { INTERVAL_DELAY } from '../../../config';
 
 import template from './moving.template.html';
-
-import { INTERVAL_DELAY } from '../../../config';
 
 class MovingController {
   constructor($interval, Obelisk) {

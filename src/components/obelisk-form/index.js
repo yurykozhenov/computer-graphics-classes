@@ -9,6 +9,7 @@ import './moving';
 
 import './nested/nested.component';
 import './randomLocation/randomLocation.component';
+import './elipticalMovement/elipticalMovement.component';
 
 class ObeliskFormController {
   constructor(Obelisk) {

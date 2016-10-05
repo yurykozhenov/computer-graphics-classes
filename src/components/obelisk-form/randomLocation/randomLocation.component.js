@@ -1,18 +1,12 @@
 import module from '../../../app.module';
-import { canvas, ctx } from '../../../canvas';
+import { ctx, canvasXCenter, canvasYCenter } from '../../../canvas';
 
 import template from './randomLocation.component.html';
 
 const INTERVAL_DELAY = 500;
 const MAX_GENERATIONS = 50;
 
-const HALF_WIDTH = canvas.width / 2;
-const HALF_HEIGHT = canvas.height / 2;
-
 const LOCATION_RADIUS = 100;
-
-const MIN_WIDTH = HALF_WIDTH - LOCATION_RADIUS;
-const MIN_HEIGHT = HALF_HEIGHT - LOCATION_RADIUS;
 
 class RandomLocationController {
   constructor($interval, Obelisk) {
@@ -47,8 +41,8 @@ class RandomLocationController {
   }
 
   generateRandomLocation() {
-    this.figure.x0 = Math.round(HALF_WIDTH + (Math.random() - 0.5) * LOCATION_RADIUS * 2);
-    this.figure.y0 = Math.round(HALF_HEIGHT + (Math.random() - 0.5) * LOCATION_RADIUS * 2);
+    this.figure.x0 = Math.round(canvasXCenter + (Math.random() - 0.5) * LOCATION_RADIUS * 2);
+    this.figure.y0 = Math.round(canvasYCenter + (Math.random() - 0.5) * LOCATION_RADIUS * 2);
 
     this.figure.redraw();
 
@@ -58,8 +52,8 @@ class RandomLocationController {
   drawBorder() {
     ctx.strokeStyle = '#000';
     ctx.strokeRect(
-      MIN_WIDTH - this.figureDistanceToLeft,
-      MIN_HEIGHT - this.figure.h,
+      canvasXCenter - LOCATION_RADIUS - this.figureDistanceToLeft,
+      canvasYCenter - LOCATION_RADIUS - this.figure.h,
       LOCATION_RADIUS + 120 + this.figureHeight,
       LOCATION_RADIUS + 20 + this.figureWidth
     );
