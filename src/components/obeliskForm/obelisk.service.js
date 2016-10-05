@@ -1,4 +1,4 @@
-import module from '../../app.module';
+import appModule from '../../app.module';
 import { canvas, ctx, setCanvasSize } from '../../canvas';
 
 import Obelisk from '../../classes/figures/obelisk';
@@ -66,4 +66,4 @@ class ObeliskService {
   }
 }
 
-module.service('Obelisk', ObeliskService);
+appModule.service('Obelisk', ObeliskService);

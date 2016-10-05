@@ -1,5 +1,6 @@
-import module from '../../../app.module';
-import { ctx, canvasXCenter, canvasYCenter } from '../../../canvas';
+import appModule from '../../../../app.module';
+
+import { ctx, canvasXCenter, canvasYCenter } from '../../../../canvas';
 
 import template from './randomLocation.component.html';
 
@@ -60,7 +61,7 @@ class RandomLocationController {
   }
 }
 
-module.component('cgRandomLocation', {
+appModule.component('cgRandomLocation', {
   template: template,
   controller: RandomLocationController
 });

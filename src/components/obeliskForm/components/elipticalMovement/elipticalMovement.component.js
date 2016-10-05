@@ -1,6 +1,7 @@
-import module from '../../../app.module';
-import { INTERVAL_DELAY } from '../../../config';
-import { canvasXCenter, canvasYCenter } from '../../../canvas';
+import appModule from '../../../../app.module';
+
+import { INTERVAL_DELAY } from '../../../../config';
+import { canvasXCenter, canvasYCenter } from '../../../../canvas';
 
 import template from './elipticalMovement.component.html';
 
@@ -71,7 +72,7 @@ class ElipticalMovementController {
   }
 }
 
-module.component('cgElipticalMovement', {
+appModule.component('cgElipticalMovement', {
   template: template,
   controller: ElipticalMovementController
 });

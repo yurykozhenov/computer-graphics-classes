@@ -1,7 +1,8 @@
-import module from '../../../app.module';
-import { canvasXCenter, canvasYCenter } from '../../../canvas';
+import appModule from '../../../../app.module';
 
-import template from './random-generation.template.html';
+import { canvasXCenter, canvasYCenter } from '../../../../canvas';
+
+import template from './randomGeneration.component.html';
 
 const INTERVAL_DELAY = 500;
 const MAX_GENERATIONS = 50;
@@ -60,7 +61,7 @@ class RandomGenerationController {
   }
 }
 
-module.component('cgRandomGeneration', {
+appModule.component('cgRandomGeneration', {
   template: template,
   controller: RandomGenerationController
 });

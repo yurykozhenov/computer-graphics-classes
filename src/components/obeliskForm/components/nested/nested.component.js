@@ -1,4 +1,4 @@
-import module from '../../../app.module';
+import appModule from '../../../../app.module';
 
 import template from './nested.component.html';
 
@@ -32,7 +32,7 @@ class NestedController {
   }
 }
 
-module.component('cgNested', {
+appModule.component('cgNested', {
   template: template,
   controller: NestedController
 });
