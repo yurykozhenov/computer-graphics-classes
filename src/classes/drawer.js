@@ -1,6 +1,8 @@
+import { ctx } from '../canvas';
+
 export default class Drawer {
-  constructor(context, x0, y0) {
-    this.ctx = context;
+  constructor(x0 = 0, y0 = 0) {
+    this.ctx = ctx;
 
     this.x = x0;
     this.y = y0;
@@ -30,7 +32,7 @@ export default class Drawer {
     this.ctx.moveTo(this.x, this.y);
   }
 
-  lineTo(x, y, dashed) {
+  lineTo(x, y) {
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
 
@@ -42,17 +44,30 @@ export default class Drawer {
       this.y = y;
     }
 
-    if (dashed) {
-      // TODO: Draw dashed line
-      this.ctx.lineTo(this.x, this.y);
-    } else {
-      this.ctx.lineTo(this.x, this.y);
-    }
+    this.ctx.lineTo(this.x, this.y);
 
     this.ctx.stroke();
   }
 
-  lineRel(x, y, dashed) {
+  dashedLineTo(x, y) {
+    // TODO: Implement
+    this.ctx.beginPath();
+    this.ctx.moveTo(this.x, this.y);
+
+    if (typeof x === 'object') {
+      this.x = x.x;
+      this.y = x.y;
+    } else {
+      this.x = x;
+      this.y = y;
+    }
+
+    this.ctx.lineTo(this.x, this.y);
+
+    this.ctx.stroke();
+  }
+
+  lineRel(x, y) {
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
 
@@ -64,14 +79,13 @@ export default class Drawer {
       this.y += y;
     }
 
-    if (dashed) {
-      // TODO: Draw dashed line
-      this.ctx.lineTo(this.x, this.y);
-    } else {
-      this.ctx.lineTo(this.x, this.y);
-    }
+    this.ctx.lineTo(this.x, this.y);
 
     this.ctx.stroke();
+  }
+
+  dashedRelLineTo(x, y) {
+    // TODO: Implement
   }
 
   changeColor(color) {

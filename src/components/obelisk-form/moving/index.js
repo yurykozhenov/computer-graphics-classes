@@ -2,12 +2,12 @@ import module from '../../../app.module';
 
 import template from './moving.template.html';
 
-const INTERVAL_DELAY = 10;
+import { INTERVAL_DELAY } from '../../../config';
 
 class MovingController {
-  constructor($interval, figure) {
+  constructor($interval, Obelisk) {
     this.$interval = $interval;
-    this.figure = figure;
+    this.figure = Obelisk;
 
     this.actionsList = [
       'up',

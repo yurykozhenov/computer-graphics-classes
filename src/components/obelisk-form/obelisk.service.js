@@ -1,9 +1,9 @@
 import module from '../../app.module';
 import { canvas, ctx, setCanvasSize } from '../../canvas';
 
-import drawObelisk from '../../functions/draw-obelisk';
+import Obelisk from '../../classes/figures/obelisk';
 
-class FigureService {
+class ObeliskService {
   constructor() {
     this.x0 = 300; // Початкова горизонтальна точка
     this.y0 = 400; // Початкова вертикальна точка
@@ -19,6 +19,18 @@ class FigureService {
     this.visibleColor = '#0000ff';
     this.invisibleColor = '#bbbbff';
 
+    this.obelisk = new Obelisk(
+      this.x0,
+      this.y0,
+      this.a1,
+      this.b1,
+      this.a2,
+      this.b2,
+      this.h,
+      this.visibleColor,
+      this.invisibleColor
+    );
+
     this.draw();
 
     window.addEventListener('resize', () => {
@@ -27,35 +39,31 @@ class FigureService {
     });
   }
 
+  changeObelisk() {
+    this.obelisk.x0 = this.x0;
+    this.obelisk.y0 = this.y0;
+    this.obelisk.a1 = this.a1;
+    this.obelisk.b1 = this.b1;
+    this.obelisk.a2 = this.a2;
+    this.obelisk.b2 = this.b2;
+    this.obelisk.h = this.h;
+    this.obelisk.visibleColor = this.visibleColor;
+    this.obelisk.invisibleColor = this.invisibleColor;
+  }
+
   draw() {
-    drawObelisk(
-      this.x0,
-      this.y0,
-      this.a1,
-      this.b1,
-      this.a2,
-      this.b2,
-      this.h,
-      this.visibleColor,
-      this.invisibleColor
-    );
+    this.changeObelisk();
+
+    this.obelisk.render();
   }
 
   redraw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawObelisk(
-      this.x0,
-      this.y0,
-      this.a1,
-      this.b1,
-      this.a2,
-      this.b2,
-      this.h,
-      this.visibleColor,
-      this.invisibleColor
-    );
+    this.changeObelisk();
+
+    this.obelisk.render();
   }
 }
 
-module.service('figure', FigureService);
+module.service('Obelisk', ObeliskService);

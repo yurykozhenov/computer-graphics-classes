@@ -7,9 +7,9 @@ const INTERVAL_DELAY = 500;
 const MAX_GENERATIONS = 50;
 
 class RandomGenerationController {
-  constructor($interval, figure) {
+  constructor($interval, Obelisk) {
     this.$interval = $interval;
-    this.figure = figure;
+    this.figure = Obelisk;
     this.countGenerations = 0;
   }
 
