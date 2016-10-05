@@ -1,0 +1,72 @@
+import module from '../../../app.module';
+import { canvas, ctx } from '../../../canvas';
+
+import template from './randomLocation.component.html';
+
+const INTERVAL_DELAY = 500;
+const MAX_GENERATIONS = 50;
+
+const HALF_WIDTH = canvas.width / 2;
+const HALF_HEIGHT = canvas.height / 2;
+
+const LOCATION_RADIUS = 100;
+
+const MIN_WIDTH = HALF_WIDTH - LOCATION_RADIUS;
+const MIN_HEIGHT = HALF_HEIGHT - LOCATION_RADIUS;
+
+class RandomLocationController {
+  constructor($interval, Obelisk) {
+    this.$interval = $interval;
+    this.figure = Obelisk;
+    this.countGenerations = 0;
+
+    this.figureDistanceToLeft = this.figure.x0 - this.figure.obelisk.points.bottomLeft.x;
+    this.figureHeight = this.figure.h + (this.figure.obelisk.points.bottomLeft.y - this.figure.y0);
+    this.figureWidth = this.figureDistanceToLeft + this.figure.b1;
+  }
+
+  startRandomLocation() {
+    const fn = () => {
+      if (this.countGenerations === MAX_GENERATIONS) {
+        this.countGenerations = 0;
+        this.stopRandomLocation();
+      } else {
+        this.countGenerations += 1;
+        this.generateRandomLocation();
+      }
+    };
+
+    this.generator = this.$interval(fn, INTERVAL_DELAY);
+  }
+
+  stopRandomLocation() {
+    this.$interval.cancel(this.generator);
+    this.generator = null;
+
+    this.countGenerations = 0;
+  }
+
+  generateRandomLocation() {
+    this.figure.x0 = Math.round(HALF_WIDTH + (Math.random() - 0.5) * LOCATION_RADIUS * 2);
+    this.figure.y0 = Math.round(HALF_HEIGHT + (Math.random() - 0.5) * LOCATION_RADIUS * 2);
+
+    this.figure.redraw();
+
+    this.drawBorder();
+  }
+
+  drawBorder() {
+    ctx.strokeStyle = '#000';
+    ctx.strokeRect(
+      MIN_WIDTH - this.figureDistanceToLeft,
+      MIN_HEIGHT - this.figure.h,
+      LOCATION_RADIUS + 120 + this.figureHeight,
+      LOCATION_RADIUS + 20 + this.figureWidth
+    );
+  }
+}
+
+module.component('cgRandomLocation', {
+  template: template,
+  controller: RandomLocationController
+});

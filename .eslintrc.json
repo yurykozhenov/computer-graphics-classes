@@ -43,7 +43,7 @@
     "no-implicit-globals": "error",
     "no-invalid-this": "error",
     "no-magic-numbers": ["warn", {
-      "ignore": [-1, 0.5, 0, 1, 2, 8, 16, 100, 200, 255, 300, 400, 500, 1000, 80, 8080, 60000],
+      "ignore": [-1, 0.5, 0, 1, 1.5, 2, 4, 8, 16, 100, 200, 255, 300, 400, 500, 1000, 80, 8080, 60000],
       "ignoreArrayIndexes": true,
       "enforceConst": true
     }],

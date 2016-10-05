@@ -6,7 +6,9 @@ import './obelisk.service';
 
 import './random-generation';
 import './moving';
+
 import './nested/nested.component';
+import './randomLocation/randomLocation.component';
 
 class ObeliskFormController {
   constructor(Obelisk) {

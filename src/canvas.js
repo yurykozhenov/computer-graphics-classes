@@ -1,9 +1,7 @@
 export const canvas = document.getElementById('canvas');
 
-const SIDEBAR_WIDTH_RATIO = 1.2;
-
 export function setCanvasSize() {
-  canvas.width = window.innerWidth / SIDEBAR_WIDTH_RATIO;
+  canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
 
