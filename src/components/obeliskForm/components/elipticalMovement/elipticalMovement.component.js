@@ -1,12 +1,12 @@
 import appModule from '../../../../app.module';
 
 import { INTERVAL_DELAY } from '../../../../config';
-import { canvasXCenter, canvasYCenter } from '../../../../canvas';
 
 import template from './elipticalMovement.component.html';
 
 const ELIPSIS_WIDTH = 200;
 const ELIPSIS_HEIGHT = 100;
+const FRONT_ANGLE = 3 * Math.PI / 2;
 
 class ElipticalMovementController {
   constructor($interval, Obelisk) {
@@ -23,6 +23,9 @@ class ElipticalMovementController {
     this.h = this.figure.h;
 
     this.degree = 0;
+
+    this.xCenter = this.figure.x0 - ELIPSIS_WIDTH;
+    this.yCenter = this.figure.y0;
 
     const fn = () => {
       this.moveElipticaly();
@@ -47,10 +50,10 @@ class ElipticalMovementController {
     this.degree = this.degree >= 360 ? 0 : this.degree + 1;
     this.rad = this.degToRad(this.degree);
 
-    this.figure.x0 = canvasXCenter + Math.floor(ELIPSIS_WIDTH * Math.cos(this.rad));
-    this.figure.y0 = canvasYCenter - Math.floor(ELIPSIS_HEIGHT * Math.sin(this.rad));
+    this.figure.x0 = this.xCenter + Math.floor(ELIPSIS_WIDTH * Math.cos(this.rad));
+    this.figure.y0 = this.yCenter - Math.floor(ELIPSIS_HEIGHT * Math.sin(this.rad));
 
-    const ratio = 75 * Math.cos(3 * Math.PI / 2 + this.rad);
+    const ratio = 75 * Math.cos(FRONT_ANGLE + this.rad);
 
     this.figure.a1 = this.negativeToZero(this.a1 - ratio);
     this.figure.a2 = this.negativeToZero(this.a2 - ratio);

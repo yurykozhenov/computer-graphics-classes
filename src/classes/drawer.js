@@ -1,4 +1,4 @@
-import { ctx } from '../canvas';
+import { canvas, ctx } from '../canvas';
 
 export default class Drawer {
   constructor(x0 = 0, y0 = 0) {
@@ -90,5 +90,13 @@ export default class Drawer {
 
   changeColor(color) {
     this.ctx.strokeStyle = color;
+  }
+
+  clearCanvas() {
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  strokeRect(x0, y0, width, height) {
+    this.ctx.strokeRect(x0, y0, width, height);
   }
 }

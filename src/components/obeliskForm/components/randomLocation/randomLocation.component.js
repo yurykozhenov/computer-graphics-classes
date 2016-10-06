@@ -1,6 +1,7 @@
 import appModule from '../../../../app.module';
 
-import { ctx, canvasXCenter, canvasYCenter } from '../../../../canvas';
+import { canvasXCenter, canvasYCenter } from '../../../../canvas';
+import Drawer from '../../../../classes/drawer';
 
 import template from './randomLocation.component.html';
 
@@ -14,6 +15,8 @@ class RandomLocationController {
     this.$interval = $interval;
     this.figure = Obelisk;
     this.countGenerations = 0;
+
+    this.drawer = new Drawer();
 
     this.figureDistanceToLeft = this.figure.x0 - this.figure.obelisk.points.bottomLeft.x;
     this.figureHeight = this.figure.h + (this.figure.obelisk.points.bottomLeft.y - this.figure.y0);
@@ -51,12 +54,12 @@ class RandomLocationController {
   }
 
   drawBorder() {
-    ctx.strokeStyle = '#000';
-    ctx.strokeRect(
+    this.drawer.changeColor('#000');
+    this.drawer.strokeRect(
       canvasXCenter - LOCATION_RADIUS - this.figureDistanceToLeft,
       canvasYCenter - LOCATION_RADIUS - this.figure.h,
-      LOCATION_RADIUS + 120 + this.figureHeight,
-      LOCATION_RADIUS + 20 + this.figureWidth
+      LOCATION_RADIUS * 2.3 + this.figureHeight,
+      LOCATION_RADIUS * 1.3 + this.figureWidth
     );
   }
 }
