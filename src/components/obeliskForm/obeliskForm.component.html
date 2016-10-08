@@ -1,55 +1,68 @@
 <form novalidate>
-  <div class="row">
-    <div class="six columns">
-      <label for="x0">x0</label>
-      <input type="number" class="u-full-width" id="x0" ng-model="$ctrl.figure.x0" ng-change="$ctrl.figure.redraw()">
-    </div>
-    <div class="six columns">
-      <label for="y0">y0</label>
-      <input type="number" class="u-full-width" id="y0" ng-model="$ctrl.figure.y0" ng-change="$ctrl.figure.redraw()">
-    </div>
-  </div>
+  <details>
+    <summary>Parameters</summary>
 
-  <div class="row">
-    <div class="six columns">
-      <label for="a1">a1</label>
-      <input type="number" class="u-full-width" id="a1" ng-model="$ctrl.figure.a1" ng-change="$ctrl.figure.redraw()">
+    <div class="row">
+      <div class="six columns">
+        <label for="x0">x0</label>
+        <input type="number" class="u-full-width" id="x0" ng-model="$ctrl.figure.x0" ng-change="$ctrl.figure.redraw()">
+      </div>
+      <div class="six columns">
+        <label for="y0">y0</label>
+        <input type="number" class="u-full-width" id="y0" ng-model="$ctrl.figure.y0" ng-change="$ctrl.figure.redraw()">
+      </div>
     </div>
-    <div class="six columns">
-      <label for="b1">b1</label>
-      <input type="number" class="u-full-width" id="b1" ng-model="$ctrl.figure.b1" ng-change="$ctrl.figure.redraw()">
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="six columns">
-      <label for="a2">a2</label>
-      <input type="number" class="u-full-width" id="a2" ng-model="$ctrl.figure.a2" ng-change="$ctrl.figure.redraw()">
+    <div class="row">
+      <div class="six columns">
+        <label for="a1">a1</label>
+        <input type="number" class="u-full-width" id="a1" ng-model="$ctrl.figure.a1" ng-change="$ctrl.figure.redraw()">
+      </div>
+      <div class="six columns">
+        <label for="b1">b1</label>
+        <input type="number" class="u-full-width" id="b1" ng-model="$ctrl.figure.b1" ng-change="$ctrl.figure.redraw()">
+      </div>
     </div>
-    <div class="six columns">
-      <label for="b2">b2</label>
-      <input type="number" class="u-full-width" id="b2" ng-model="$ctrl.figure.b2" ng-change="$ctrl.figure.redraw()">
+
+    <div class="row">
+      <div class="six columns">
+        <label for="a2">a2</label>
+        <input type="number" class="u-full-width" id="a2" ng-model="$ctrl.figure.a2" ng-change="$ctrl.figure.redraw()">
+      </div>
+      <div class="six columns">
+        <label for="b2">b2</label>
+        <input type="number" class="u-full-width" id="b2" ng-model="$ctrl.figure.b2" ng-change="$ctrl.figure.redraw()">
+      </div>
     </div>
-  </div>
 
-  <label for="h">h</label>
-  <input type="number" class="u-full-width" id="h" ng-model="$ctrl.figure.h" ng-change="$ctrl.figure.redraw()">
-
-  <div class="row">
-    <div class="six columns">
-      <label for="visibleColor">visibleColor</label>
-      <input type="color" class="u-full-width" id="visibleColor" ng-model="$ctrl.figure.visibleColor" ng-change="$ctrl.figure.redraw()">
+    <div class="row">
+      <label for="h">h</label>
+      <input type="number" class="u-full-width" id="h" ng-model="$ctrl.figure.h" ng-change="$ctrl.figure.redraw()">
     </div>
-    <div class="six columns">
-      <label for="invisibleColor">invisibleColor</label>
-      <input type="color" class="u-full-width" id="invisibleColor" ng-model="$ctrl.figure.invisibleColor" ng-change="$ctrl.figure.redraw()">
+
+    <div class="row">
+      <div class="six columns">
+        <label for="visibleColor">visibleColor</label>
+        <input type="color" class="u-full-width" id="visibleColor" ng-model="$ctrl.figure.visibleColor" ng-change="$ctrl.figure.redraw()">
+      </div>
+      <div class="six columns">
+        <label for="invisibleColor">invisibleColor</label>
+        <input type="color" class="u-full-width" id="invisibleColor" ng-model="$ctrl.figure.invisibleColor" ng-change="$ctrl.figure.redraw()">
+      </div>
     </div>
-  </div>
+  </details>
 
-  <cg-random-generation></cg-random-generation>
-  <cg-moving></cg-moving>
 
-  <cg-nested></cg-nested>
-  <cg-random-location></cg-random-location>
-  <cg-eliptical-movement></cg-eliptical-movement>
+  <details>
+    <summary>Lab 2</summary>
+    <cg-random-generation></cg-random-generation>
+    <cg-moving></cg-moving>
+  </details>
+
+  <details>
+    <summary>Lab 3</summary>
+    <cg-nested></cg-nested>
+    <cg-random-location></cg-random-location>
+    <cg-eliptical-movement></cg-eliptical-movement>
+  </details>
 </form>

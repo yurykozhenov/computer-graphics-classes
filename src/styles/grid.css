@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.row {
+  display: block;
+  width: 100%;
+  margin: 5px auto;
+}
+
+.columns {
+  display: inline-block;
+}
+
+.six.columns {
+  width: calc(100% / 2 - 2px);
+}
+
+.four.columns {
+  width: calc(100% / 3 - 3px);
+}

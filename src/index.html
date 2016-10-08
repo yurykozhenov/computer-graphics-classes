@@ -11,9 +11,12 @@
   <body ng-app="app" ng-strict-di>
     <div class="container">
       <div class="row">
-        <div class="sidebar">
-          <cg-obelisk-form></cg-obelisk-form>
-        </div>
+        <details class="sidebar-container">
+          <summary>Controls</summary>
+          <div class="sidebar">
+              <cg-obelisk-form></cg-obelisk-form>
+          </div>
+        </details>
 
         <canvas id="canvas"></canvas>
       </div>

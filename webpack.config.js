@@ -16,7 +16,7 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 module.exports = {
   entry: {
     app: path.resolve(__dirname, SOURCE_FOLDER, 'app'),
-    vendor: ['angular', 'skeleton', 'font-awesome/css/font-awesome.css'] // path.resolve(__dirname, SOURCE_FOLDER, 'vendor')
+    vendor: path.resolve(__dirname, SOURCE_FOLDER, 'vendor')
   },
   output: {
     path: path.resolve(__dirname, DESTINATION_FOLDER),
