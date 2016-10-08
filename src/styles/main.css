@@ -7,6 +7,14 @@ body {
   padding: 0;
 }
 
+a {
+  color: cornflowerblue;
+}
+
+a:active {
+  color: royalblue;
+}
+
 button, input {
   width: 100%;
 }
@@ -33,6 +41,10 @@ button, input {
 
 .rotate-left-45 {
   transform: rotate(-45deg);
+}
+
+.arrow-group {
+  display: inline-block;
 }
 
 .center {

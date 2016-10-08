@@ -24,3 +24,10 @@
 .four.columns {
   width: calc(100% / 3 - 3px);
 }
+
+@media screen and (max-width: 720px) {
+  .columns {
+    display: block;
+    width: 100% !important;
+  }
+}

@@ -1,6 +1,6 @@
 <form novalidate>
   <details>
-    <summary>Parameters</summary>
+    <summary>Params</summary>
 
     <div class="row">
       <div class="six columns">
@@ -42,11 +42,11 @@
 
     <div class="row">
       <div class="six columns">
-        <label for="visibleColor">visibleColor</label>
+        <label for="visibleColor">visible</label>
         <input type="color" class="u-full-width" id="visibleColor" ng-model="$ctrl.figure.visibleColor" ng-change="$ctrl.figure.redraw()">
       </div>
       <div class="six columns">
-        <label for="invisibleColor">invisibleColor</label>
+        <label for="invisibleColor">invisible</label>
         <input type="color" class="u-full-width" id="invisibleColor" ng-model="$ctrl.figure.invisibleColor" ng-change="$ctrl.figure.redraw()">
       </div>
     </div>
