@@ -11,7 +11,8 @@
     "bundle": "webpack",
     "watch": "webpack --watch",
     "livereload": "webpack-dev-server --hot --inline",
-    "build:windows": "electron-packager . --platform=win32 --arch=x64 --overwrite"
+    "build:windows": "electron-packager . --platform=win32 --arch=x64 --overwrite",
+    "bower:install": "bower install"
   },
   "author": "Yury Kozhenov <yurykozhenov@gmail.com>",
   "license": "MIT",
