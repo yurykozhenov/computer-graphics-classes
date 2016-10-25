@@ -5,7 +5,9 @@
     "es6": true,
     "node": true
   },
-  "globals": {},
+  "globals": {
+    "_": true
+  },
   "extends": [
     "eslint:recommended",
     "google"
@@ -42,11 +44,6 @@
     "eqeqeq": "warn",
     "no-implicit-globals": "error",
     "no-invalid-this": "error",
-    "no-magic-numbers": ["warn", {
-      "ignore": [-1, 0.5, 0, 1, 1.5, 2, 4, 8, 16, 45, 60, 90, 100, 180, 200, 255, 300, 360, 400, 500, 1000, 80, 8080, 60000],
-      "ignoreArrayIndexes": true,
-      "enforceConst": true
-    }],
     "vars-on-top": "warn",
 
     "strict": ["error", "never"],

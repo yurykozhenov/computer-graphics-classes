@@ -68,7 +68,7 @@ module.exports = {
     ]
   },
   eslint: {
-    failOnError: true // Forces to write eslint-happy code
+    // failOnError: true // Forces to write eslint-happy code
   },
   plugins: [
     new webpack.ResolverPlugin(
