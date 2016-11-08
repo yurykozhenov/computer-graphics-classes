@@ -1,1 +1,2 @@
 import 'lodash';
+import 'mathjs';
