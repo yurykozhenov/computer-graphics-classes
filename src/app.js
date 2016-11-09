@@ -203,4 +203,8 @@ function drawPlot2(xyArray) {
   ctx.stroke();
 }
 
+ctx.strokeStyle = '#f00';
+drawPlot2(POINTS);
+
+ctx.strokeStyle = '#00f';
 drawPlot2(interpolate(POINTS));
